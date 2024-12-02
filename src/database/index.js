@@ -16,7 +16,7 @@ class Database {
         this.mongo();
     }
     init() {
-        this.connection = new Sequelize('postgresql://postgres:OBSsbdNhWnjtYRVzVEKJwBHOfJvamkqb@junction.proxy.rlwy.net:38845/railway');
+        this.connection = new Sequelize('postgresql://postgres:EEgPlibvPqduaVnHEFrrKszOetYCeRCa@junction.proxy.rlwy.net:13636/railway');
         models.map(model => model.init(this.connection))
             .map(
                 model => model.associate && model.associate(this.connection.models),
