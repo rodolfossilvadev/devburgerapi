@@ -1,7 +1,6 @@
 import Sequelize from "sequelize";
 import mongoose from "mongoose";
 
-import configDatabase from "../config/database.js";
 
 import User from "../app/models/user.js";
 import Products from "../app/models/products.js";
@@ -17,7 +16,7 @@ class Database {
         this.mongo();
     }
     init() {
-        this.connection = new Sequelize(configDatabase);
+        this.connection = new Sequelize('postgresql://postgres:xtSTpILFAerCHZEleIesRqAyVTAYQTiE@junction.proxy.rlwy.net:52254/railway');
         models.map(model => model.init(this.connection))
             .map(
                 model => model.associate && model.associate(this.connection.models),
