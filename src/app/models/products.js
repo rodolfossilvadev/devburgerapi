@@ -2,7 +2,7 @@ import Sequelize, { Model } from "sequelize";
 
 
 class Products extends Model {
-   static init(sequelize) {
+    static init(sequelize) {
         super.init(
             {
                 name: Sequelize.STRING,
@@ -12,7 +12,7 @@ class Products extends Model {
                 url: {
                     type: Sequelize.VIRTUAL,
                     get() {
-                        return `http://localhost:3001/product-file/${this.path}`
+                        return `https://devburgerapi.onrender.com/product-file/${this.path}`
                     },
                 },
             },

@@ -2,7 +2,7 @@ import Sequelize, { Model } from "sequelize";
 
 
 class Category extends Model {
-   static init(sequelize) {
+    static init(sequelize) {
         super.init(
             {
                 name: Sequelize.STRING,
@@ -10,7 +10,7 @@ class Category extends Model {
                 url: {
                     type: Sequelize.VIRTUAL,
                     get() {
-                        return `http://localhost:3001/category-file/${this.path}`
+                        return `https://devburgerapi.onrender.com/category-file/${this.path}`
                     },
                 },
             },
@@ -21,7 +21,7 @@ class Category extends Model {
         return this;
     }
 
-  
+
 }
 
 export default Category;

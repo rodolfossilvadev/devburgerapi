@@ -17,7 +17,7 @@ function authMiddlewares(request, response, next) {
 
         request.userId = decoded.id;
         request.userName = decoded.name;
-        return next(); // Chamando next() dentro do callback após a verificação bem-sucedida
+        return next();
     });
 }
 
