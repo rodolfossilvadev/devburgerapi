@@ -12,7 +12,7 @@ class Products extends Model {
                 url: {
                     type: Sequelize.VIRTUAL,
                     get() {
-                        return `https://devburgerapi.onrender.com/product-file/${this.path}`
+                        return `http://localhost:3001/product-file/${this.path}`
                     },
                 },
             },

@@ -7,21 +7,14 @@ import './database';
 
 class App {
     constructor() {
-        this.app = express();
+        this.app = express()
 
-        this.app.use(cors({
-            origin: 'https://joyful-cat-76ad2f.netlify.app',
-            methods: ['GET', 'POST', 'PUT', 'DELETE'],
-            allowedHeaders: ['Content-Type', 'Authorization'],
-        }));
-
+        this.app.use(cors());
         this.middlewares();
         this.routes();
     }
-
     middlewares() {
         this.app.use(express.json());
-
         this.app.use(
             '/product-file',
             express.static(resolve(__dirname, '..', 'uploads'))
