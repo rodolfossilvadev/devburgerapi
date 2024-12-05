@@ -15,7 +15,7 @@ class Database {
     }
 
     init() {
-        this.connection = new Sequelize('postgresql://devburger_zqa5_user:gxbztxYUHm7nHwG5JLYOx5PaQDYUf54S@dpg-ct8eutm8ii6s73c9mqb0-a.oregon-postgres.render.com/devburger_zqa5');
+        this.connection = new Sequelize('postgresql://devburger_2ovt_user:qklOcY71IgJQUlvKFHfvmNIW7T7FHpCF@dpg-ct8f81d6l47c739klma0-a.oregon-postgres.render.com/devburger_2ovt');
         models
             .map((model) => model.init(this.connection))
             .map(
