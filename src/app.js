@@ -2,11 +2,10 @@ import express from 'express';
 import routes from './routes.js';
 import { resolve } from 'node:path';
 import cors from 'cors';
-
 import './database';
 
 const corsOptions = {
-    origin: 'https://joyful-cat-76ad2f.netlify.app',
+    origin: ['https://joyful-cat-76ad2f.netlify.app', 'https://www.joyful-cat-76ad2f.netlify.app'],
     credentials: true,
 };
 
@@ -15,7 +14,9 @@ class App {
         this.app = express();
 
         this.app.use(cors(corsOptions));
+
         this.middlewares();
+
         this.routes();
     }
 
