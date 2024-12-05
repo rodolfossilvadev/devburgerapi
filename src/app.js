@@ -4,42 +4,23 @@ import { resolve } from 'node:path';
 import cors from 'cors';
 import './database';
 
-const corsOptions = {
-    origin: ['https://joyful-cat-76ad2f.netlify.app', 'https://www.joyful-cat-76ad2f.netlify.app'],
+const corsOption = {
+    origin: 'https://devburger-interface-black.vercel.app',
     credentials: true,
 };
 
 class App {
     constructor() {
         this.app = express();
-
-        this.app.use(cors(corsOptions));
-
         this.middlewares();
-
         this.routes();
     }
 
     middlewares() {
         this.app.use(express.json());
-
-        this.app.use(
-            '/product-file',
-            (req, res, next) => {
-                console.log('Requisição de produto:', req.path);
-                next();
-            },
-            express.static(resolve(__dirname, '..', 'uploads', 'products'))
-        );
-
-        this.app.use(
-            '/category-file',
-            (req, res, next) => {
-                console.log('Requisição de categoria:', req.path);
-                next();
-            },
-            express.static(resolve(__dirname, '..', 'uploads', 'categories'))
-        );
+        this.app.use(cors(corsOption));
+        this.app.use('/product-file', express.static(resolve(__dirname, '..', 'uploads')));
+        this.app.use('/category-file', express.static(resolve(__dirname, '..', 'uploads')));
     }
 
     routes() {
