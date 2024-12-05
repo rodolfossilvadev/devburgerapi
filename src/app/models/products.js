@@ -1,5 +1,4 @@
-import Sequelize, { Model } from "sequelize";
-
+import Sequelize, { Model } from 'sequelize';
 
 class Products extends Model {
     static init(sequelize) {
@@ -12,7 +11,7 @@ class Products extends Model {
                 url: {
                     type: Sequelize.VIRTUAL,
                     get() {
-                        return `https://devburgerapi.onrender.com/product-file/${this.path}`
+                        return `https://devburgerapi.onrender.com/product-file/${this.path}`;
                     },
                 },
             },
@@ -22,6 +21,7 @@ class Products extends Model {
         );
         return this;
     }
+
     static associate(models) {
         this.belongsTo(models.Category, {
             foreignKey: 'category_id',

@@ -1,5 +1,4 @@
-import Sequelize, { Model } from "sequelize";
-
+import Sequelize, { Model } from 'sequelize';
 
 class Category extends Model {
     static init(sequelize) {
@@ -10,7 +9,7 @@ class Category extends Model {
                 url: {
                     type: Sequelize.VIRTUAL,
                     get() {
-                        return `https://devburgerapi.onrender.com/category-file/${this.path}`
+                        return `https://devburgerapi.onrender.com/category-file/${this.path}`;
                     },
                 },
             },
@@ -20,8 +19,6 @@ class Category extends Model {
         );
         return this;
     }
-
-
 }
 
 export default Category;
