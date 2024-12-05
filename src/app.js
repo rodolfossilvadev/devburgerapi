@@ -24,10 +24,19 @@ class App {
 
         this.app.use(
             '/product-file',
+            (req, res, next) => {
+                console.log('Requisição de produto:', req.path);
+                next();
+            },
             express.static(resolve(__dirname, '..', 'uploads', 'products'))
         );
+
         this.app.use(
             '/category-file',
+            (req, res, next) => {
+                console.log('Requisição de categoria:', req.path);
+                next();
+            },
             express.static(resolve(__dirname, '..', 'uploads', 'categories'))
         );
     }
