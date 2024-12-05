@@ -5,7 +5,7 @@ import cors from 'cors';
 import './database';
 
 const corsOption = {
-    origin: 'https://devburger-interface-black.vercel.app',
+    origin: 'https://joyful-cat-76ad2f.netlify.app',
     credentials: true,
 };
 
